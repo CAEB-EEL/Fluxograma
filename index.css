@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+
+html, body {
+    width: 100%;
+    margin: 10; /*era 0*/
+    padding: 0;
+}
+
+body
+{
+    background-color: #303030; /*era #161616*/
+    font-family: Inter, Arial;
+}
+
+div#main
+{
+    font-size: 1em;
+    position: absolute;
+}
+.rowContainer
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+#boxRows
+{
+    position: absolute;
+}
+
+#svgContainer
+{
+    position: absolute;
+}
+hr
+{
+    /* border: #8888ff 1px solid; */
+    border: #8888ff;
+}
+h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0 12px;
+    color: #EA7413;
+}
+.modbox
+{
+    position: relative;
+    border: 1px solid rgba(255,255,255,0);
+    text-align: center;
+    width: 12em; /*era 12, é a largura das caixas*/
+    height: 6em; /*era 7, é a altura das caixas*/
+    margin: 5px; /*era 5, é a distância lateral entre as caixas*/
+    padding: 5px; /*era 3, é a distância do texto dentro da caixa para a lateral da caixa*/
+    background-color: black;
+}
+line, .modbox
+{
+    transition: all 200ms ease;
+}
+.modTitle
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #ffffff;
+    height: 5.5em; /*era 3, é a distância do texto dentro da caixa até o topo da caixa*/
+    /* width: 6em; */
+}
+.modTitle img
+{
+    max-width: 1.5em;
+    max-height: 1.5em;
+}
+.rewardSpan
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+.modText, .bonusText
+{
+    color: #8888ff;
+    font-size: 0.7em; /*era 0.8*/
+    line-height: 1px;
+}
