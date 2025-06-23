@@ -152,7 +152,9 @@ const data = {
     },
     "Bioquímica Experimental I": {
         "periodo": 4,
-        "requisito": []
+        "requisito": [
+            "Bioquímica I"
+        ]
     },
     "Fenômenos de Transporte I": {
         "periodo": 4,
@@ -201,7 +203,9 @@ const data = {
     },
     "Bioquímica Experimental II": {
         "periodo": 5,
-        "requisito": []
+        "requisito": [
+            "Bioquímica II"
+        ]
     },
     "Estatística": {
         "periodo": 5,
@@ -387,28 +391,6 @@ const data = {
     },
     "Estágio Supervisionado": {
         "periodo": 10,
-        "requisito": [
-            "Química Geral Experimental",
-            "Fundamentos de Química para Engenharia II-A",
-            "Fundamentos de Química para Engenharia I-B",
-            "Cálculo IV",
-            "Laboratório de Eletricidade",
-            "Física III",
-            "Introdução aos Métodos Numéricos e Computacionais",
-            "Cálculo I",
-            "Eletricidade Aplicada",
-            "Estatística",
-            "Mecânica",
-            "Geometria Analítica",
-            "Álgebra Linear",
-            "Física Experimental I",
-            "Física Experimental III",
-            "Cálculo III",
-            "Introdução à Ciência dos Materiais",
-            "Cálculo II",
-            "Leitura e Interpretação de Desenho Técnico",
-            "Física I",
-            "Física II"
-        ]
+        "requisito": []
     }
 }
