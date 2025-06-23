@@ -214,7 +214,7 @@ const data = {
         "requisito": []
     },
     "Operações Unitárias I": {
-        "periodo": 5
+        "periodo": 5,
         "requisito": [
             "Fenômenos de Transporte I"
         ]
