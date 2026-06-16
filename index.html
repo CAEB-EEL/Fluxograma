@@ -2,29 +2,36 @@
 <html lang="en-US">
 
 <head>
-	<meta charset="utf-8">
-	<meta name="author" content="https://github.com/zotoberg">
-	<meta name="based" content="https://github.com/kukuminer">
-	<meta name="description" content="Flowchart of subjects for the Biochemical Engineering course at the Lorena School of Engineering, which highlights the subject, requirements for taking it and other subjects that require the selected subject.">
-	<title>Fluxograma de Matérias EB-EEL</title>
-	<script src="data.js"></script>
-	<script src="script.js"></script>
-	<link rel="stylesheet" href="index.css">
+    <meta charset="utf-8">
+    <meta name="author" content="https://github.com/zotoberg">
+    <meta name="based" content="https://github.com/kukuminer">
+    <meta name="description" content="Fluxograma de matérias da EEL">
+    <title>Fluxograma de Matérias EB-EEL</title>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
-	<div id="main">
-		<svg height="100%" width="100%" id="svgContainer" style="opacity: 1;">
-			<defs style="opacity: 1;">
-				<marker id="arrow" markerWidth="10" markerHeight="10" refX="10" refY="3" markerUnits="strokeWidth" orient="auto" style="opacity: 1;">
-					<path d="M0,0 L0,6 L9,3 z" fill="#ffffff" style="opacity: 1;"></path>
-				</marker>
-			</defs>
-		</svg>
-		<div id="boxRows">
-			<!-- rows go here -->
-		</div>
-	</div>
+    <div id="main">
+        <div id="tabs">
+            <button id="tab-2022" class="tab-btn" onclick="changeTab('2022')">Ingressantes 2022</button>
+            <button id="tab-2023" class="tab-btn" onclick="changeTab('2023')">Ingressantes 2023</button>
+            <button id="tab-2025" class="tab-btn" onclick="changeTab('2025')">Ingressantes 2025</button>
+            <button id="tab-2026" class="tab-btn active" onclick="changeTab('2026')">Ingressantes 2026</button>
+        </div>
+
+        <svg height="100%" width="100%" id="svgContainer" style="opacity: 1;">
+            <defs style="opacity: 1;">
+                <marker id="arrow" markerWidth="10" markerHeight="10" refX="10" refY="3" markerUnits="strokeWidth" orient="auto" style="opacity: 1;">
+                    <path d="M0,0 L0,6 L9,3 z" fill="#ffffff" style="opacity: 1;"></path>
+                </marker>
+            </defs>
+        </svg>
+        
+        <div id="boxRows">
+            </div>
+    </div>
 </body>
 
 </html>
