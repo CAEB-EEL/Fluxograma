@@ -3,7 +3,6 @@ let colourArray = ['#ffffff', '#fbc622', '#ff1f00', '#fab372', '#ffff88'];
 let currentYear = '2026'; // Ano padrão ao abrir a página
 let currentData = {};
 
-// Função disparada ao clicar nas abas
 function changeTab(year) {
     currentYear = year;
     
@@ -17,30 +16,27 @@ function changeTab(year) {
 }
 
 function renderFlowchart() {
-    // Carrega o currículo do ano selecionado
     currentData = curriculos[currentYear];
     boxFocused = undefined;
 
-    // Limpa a tela (remove períodos e caixas antigas)
     const boxRows = document.getElementById("boxRows");
     boxRows.innerHTML = ""; 
 
-    // Limpa as setas (linhas SVG), mas mantém a definição da ponta da seta (<defs>)
     const svgContainer = document.getElementById("svgContainer");
     const defs = svgContainer.querySelector("defs").outerHTML;
     svgContainer.innerHTML = defs;
+    // O SVG não deve bloquear os cliques na tela
+    svgContainer.style.pointerEvents = "none"; 
 
     let available = {};
     let periodos = new Set([]);
     
-    // Coleta todos os períodos existentes no ano atual
     for (const [key, value] of Object.entries(currentData)) {
         const periodo = (value.periodo - 1) || 0;
         periodos.add(periodo);
     }
     periodos = Array.from(periodos).sort((a, b) => a - b);
 
-    // Cria as divisões de período dentro da div boxRows
     for (const periodo of periodos) {
         boxRows.appendChild(document.createElement("hr"));
 
@@ -51,11 +47,14 @@ function renderFlowchart() {
         let rowContainer = document.createElement("div");
         rowContainer.setAttribute("id", "row" + periodo + "container");
         rowContainer.setAttribute("class", "rowContainer");
+        // ISSO RESOLVE A TELA VAZIA NA DIREITA:
+        rowContainer.style.justifyContent = "center"; 
         boxRows.appendChild(rowContainer);
     }
 
     // Renderiza os blocos
     while(Object.keys(available).length < Object.keys(currentData).length) {
+        let added = false; // Trava contra loop infinito
         for(let [key, value] of Object.entries(currentData)) {
             const rowNum = (value.periodo - 1) || 0;
             let possible = true;
@@ -67,11 +66,12 @@ function renderFlowchart() {
             }
             if(available[key] === undefined && possible) {
                 available[key] = rowNum;
+                added = true;
                 
                 let box = document.createElement("div");
                 box.setAttribute("id", key);
                 box.setAttribute("class", "row" + rowNum + " modbox");
-                box.setAttribute("style", "opacity: 1");
+                box.setAttribute("style", "opacity: 1; z-index: 2;");
 
                 let modName = document.createElement("span");
                 let text = document.createTextNode(key);
@@ -86,36 +86,43 @@ function renderFlowchart() {
                 box.addEventListener("click", boxClick);
             }
         }
+        if (!added) break; // Sai do loop se der erro num requisito
     }
     
     // Aguarda o HTML estabilizar e desenha as setas
     setTimeout(function() {
+        // Estica o SVG até o fim da página
+        svgContainer.style.height = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight) + "px";
         drawArrows();
-    }, 100);
+    }, 200);
 }
 
 function setup() {
-    document.getElementsByTagName("body")[0].addEventListener("click", bgClick);
+    document.body.addEventListener("click", bgClick);
     renderFlowchart();
-}
-
-function forceBoxRehighlight(boxFocused) {
-    if (boxFocused) {
-        highlight(boxFocused);
-    }
 }
 
 function drawArrows() {
     for(let [key, value] of Object.entries(currentData)) {
         let self = document.getElementById(key);
+        if(!self) continue;
+
         if(value["requisito"].length) {
             for(let req of value["requisito"]) {
                 let parent = document.getElementById(req);
+                
+                // SALVADOR DE VIDAS: Se o requisito não existir, ele avisa no F12 e continua desenhando o resto!
+                if(!parent) {
+                    console.warn(`Seta ignorada: A matéria "${key}" pede "${req}", mas essa matéria não existe!`);
+                    continue; 
+                }
+                
                 let clone = document.getElementById(req + key);
                 
                 if(!clone) {
                     clone = document.createElementNS("http://www.w3.org/2000/svg", 'line');
-                    clone.setAttribute("style", "stroke: #b44c10; stroke-width: 1; opacity: 1");
+                    // SETAS VISÍVEIS POR PADRÃO (Brancas e levemente transparentes)
+                    clone.setAttribute("style", "stroke: rgba(255, 255, 255, 0.35); stroke-width: 1.5; opacity: 1; transition: all 0.3s;");
                     clone.setAttribute("marker-end", "url(#arrow)");
 
                     clone.classList.add(req.replaceAll(' ', '_'));
@@ -125,10 +132,11 @@ function drawArrows() {
                 
                 let parentRect = parent.getBoundingClientRect();
                 let selfRect = self.getBoundingClientRect();
-                let x1 = parseFloat(parentRect.x + parentRect.width/2);
-                let y1 = parseFloat(parentRect.bottom + document.documentElement.scrollTop - parent.parentElement.parentElement.offsetTop);
-                let x2 = parseFloat(selfRect.x + selfRect.width/2);
-                let y2 = parseFloat(selfRect.top + document.documentElement.scrollTop - self.parentElement.parentElement.offsetTop);
+                
+                let x1 = parentRect.left + (parentRect.width / 2) + window.scrollX;
+                let y1 = parentRect.bottom + window.scrollY;
+                let x2 = selfRect.left + (selfRect.width / 2) + window.scrollX;
+                let y2 = selfRect.top + window.scrollY;
                 
                 clone.setAttribute("x1", x1 + "px");
                 clone.setAttribute("y1", y1 + "px");
@@ -157,11 +165,12 @@ function highlight(box) {
 
     let arrows = document.getElementsByTagName("line");
     for(let a = 0; a < arrows.length; a++) {
-        arrows[a].style.opacity = 0.1;
+        arrows[a].style.opacity = 0.05; // Esconde as setas que não têm a ver com a matéria clicada
     }
     
     for(let [key, value] of Object.entries(currentData)) {
-        document.getElementById(key).style.opacity = 0.2;
+        let el = document.getElementById(key);
+        if(el) el.style.opacity = 0.2; // Escurece as outras caixas
     }
     
     highlightRecurseDown(id, 1);
@@ -169,7 +178,9 @@ function highlight(box) {
 }
 
 function highlightRecurseDown(id, depth) {
-    document.getElementById(id).style.opacity = 1;
+    let el = document.getElementById(id);
+    if(el) el.style.opacity = 1;
+    
     for(let [key, value] of Object.entries(currentData)) {
         if(value["requisito"].includes(id)) {
             let keyr = key.replaceAll(' ', '_');
@@ -177,27 +188,33 @@ function highlightRecurseDown(id, depth) {
             let lines = document.getElementsByClassName(keyr + ' ' + idr);
             if(lines.length > 0) {
                 lines[0].style.opacity = 1;
-                lines[0].style.stroke = colourArray[colourArray.length - depth] || '#ffffff';
-                lines[0].style.strokeWidth = 2;
+                lines[0].style.stroke = colourArray[colourArray.length - depth] || '#EA7413';
+                lines[0].style.strokeWidth = 3;
             }
-            document.getElementById(key).style.opacity = 1;
+            
+            let keyEl = document.getElementById(key);
+            if(keyEl) keyEl.style.opacity = 1;
+            
             highlightRecurseDown(key, depth+1);
         }
     }
 }
 
 function highlightRecurse(id, height) {
-    document.getElementById(id).style.opacity = 1;
+    let el = document.getElementById(id);
+    if(el) el.style.opacity = 1;
+    
     for(let a = 0; a < currentData[id]["requisito"].length; a++) {
+        let req = currentData[id]["requisito"][a];
         let idr = id.replaceAll(' ', '_');
-        let parentr = currentData[id]["requisito"][a].replaceAll(' ', '_');
+        let parentr = req.replaceAll(' ', '_');
         let lines = document.getElementsByClassName(idr + ' ' + parentr);
         if(lines.length > 0) {
             lines[0].style.opacity = 1;
-            lines[0].style.stroke = colourArray[height] || '#ffffff';
-            lines[0].style.strokeWidth = 2;
+            lines[0].style.stroke = colourArray[height] || '#EA7413';
+            lines[0].style.strokeWidth = 3;
         }
-        highlightRecurse(currentData[id]["requisito"][a], height + 1);
+        highlightRecurse(req, height + 1);
     }
 }
 
@@ -211,15 +228,15 @@ function boxLeave() {
         }   
         for(let a = 0; a < arrows.length; a++) {
             arrows[a].style.opacity = 1;
-            arrows[a].style.stroke = "#b44c10";
-            arrows[a].style.strokeWidth = 1;
+            arrows[a].style.stroke = "rgba(255, 255, 255, 0.35)"; // Volta pro branco bonitinho
+            arrows[a].style.strokeWidth = 1.5;
         }
     }
 }
 
 function bgClick(event) {
     let source = event.target;
-    if(source.id === "svgContainer") {
+    if(source.tagName.toLowerCase() === "html" || source.tagName.toLowerCase() === "body" || source.id === "main" || source.id === "boxRows") {
         boxFocused = undefined;
         boxLeave();
     }
@@ -237,4 +254,12 @@ function boxClick(event) {
 }
 
 document.addEventListener('DOMContentLoaded', setup);
-window.addEventListener('resize', drawArrows);
+window.addEventListener('resize', () => {
+    const svgContainer = document.getElementById("svgContainer");
+    svgContainer.style.height = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight) + "px";
+    
+    const defs = svgContainer.querySelector("defs").outerHTML;
+    svgContainer.innerHTML = defs;
+    drawArrows();
+    if (boxFocused) highlight(boxFocused);
+});
