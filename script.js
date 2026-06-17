@@ -10,7 +10,9 @@ function changeTab(year) {
     document.querySelectorAll('.tab-btn').forEach(btn => {
         btn.classList.remove('active');
     });
-    document.getElementById('tab-' + year).classList.add('active');
+    
+    let activeTab = document.getElementById('tab-' + year);
+    if(activeTab) activeTab.classList.add('active');
     
     renderFlowchart();
 }
@@ -25,7 +27,6 @@ function renderFlowchart() {
     const svgContainer = document.getElementById("svgContainer");
     const defs = svgContainer.querySelector("defs").outerHTML;
     svgContainer.innerHTML = defs;
-    // O SVG não deve bloquear os cliques na tela
     svgContainer.style.pointerEvents = "none"; 
 
     let available = {};
@@ -47,14 +48,12 @@ function renderFlowchart() {
         let rowContainer = document.createElement("div");
         rowContainer.setAttribute("id", "row" + periodo + "container");
         rowContainer.setAttribute("class", "rowContainer");
-        // ISSO RESOLVE A TELA VAZIA NA DIREITA:
         rowContainer.style.justifyContent = "center"; 
         boxRows.appendChild(rowContainer);
     }
 
-    // Renderiza os blocos
     while(Object.keys(available).length < Object.keys(currentData).length) {
-        let added = false; // Trava contra loop infinito
+        let added = false; 
         for(let [key, value] of Object.entries(currentData)) {
             const rowNum = (value.periodo - 1) || 0;
             let possible = true;
@@ -86,12 +85,10 @@ function renderFlowchart() {
                 box.addEventListener("click", boxClick);
             }
         }
-        if (!added) break; // Sai do loop se der erro num requisito
+        if (!added) break; 
     }
     
-    // Aguarda o HTML estabilizar e desenha as setas
     setTimeout(function() {
-        // Estica o SVG até o fim da página
         svgContainer.style.height = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight) + "px";
         drawArrows();
     }, 200);
@@ -111,7 +108,6 @@ function drawArrows() {
             for(let req of value["requisito"]) {
                 let parent = document.getElementById(req);
                 
-                // SALVADOR DE VIDAS: Se o requisito não existir, ele avisa no F12 e continua desenhando o resto!
                 if(!parent) {
                     console.warn(`Seta ignorada: A matéria "${key}" pede "${req}", mas essa matéria não existe!`);
                     continue; 
@@ -121,8 +117,8 @@ function drawArrows() {
                 
                 if(!clone) {
                     clone = document.createElementNS("http://www.w3.org/2000/svg", 'line');
-                    // SETAS VISÍVEIS POR PADRÃO (Brancas e levemente transparentes)
-                    clone.setAttribute("style", "stroke: rgba(255, 255, 255, 0.35); stroke-width: 1.5; opacity: 1; transition: all 0.3s;");
+                    // SETAS INVISÍVEIS POR PADRÃO AQUI (opacity: 0)
+                    clone.setAttribute("style", "stroke: #EA7413; stroke-width: 2; opacity: 0; transition: opacity 0.2s ease-in-out;");
                     clone.setAttribute("marker-end", "url(#arrow)");
 
                     clone.classList.add(req.replaceAll(' ', '_'));
@@ -165,12 +161,12 @@ function highlight(box) {
 
     let arrows = document.getElementsByTagName("line");
     for(let a = 0; a < arrows.length; a++) {
-        arrows[a].style.opacity = 0.05; // Esconde as setas que não têm a ver com a matéria clicada
+        arrows[a].style.opacity = 0; // Garante que setas irrelevantes continuem invisíveis
     }
     
     for(let [key, value] of Object.entries(currentData)) {
         let el = document.getElementById(key);
-        if(el) el.style.opacity = 0.2; // Escurece as outras caixas
+        if(el) el.style.opacity = 0.2; 
     }
     
     highlightRecurseDown(id, 1);
@@ -187,7 +183,7 @@ function highlightRecurseDown(id, depth) {
             let idr = id.replaceAll(' ', '_');
             let lines = document.getElementsByClassName(keyr + ' ' + idr);
             if(lines.length > 0) {
-                lines[0].style.opacity = 1;
+                lines[0].style.opacity = 1; // Fica visível!
                 lines[0].style.stroke = colourArray[colourArray.length - depth] || '#EA7413';
                 lines[0].style.strokeWidth = 3;
             }
@@ -210,7 +206,7 @@ function highlightRecurse(id, height) {
         let parentr = req.replaceAll(' ', '_');
         let lines = document.getElementsByClassName(idr + ' ' + parentr);
         if(lines.length > 0) {
-            lines[0].style.opacity = 1;
+            lines[0].style.opacity = 1; // Fica visível!
             lines[0].style.stroke = colourArray[height] || '#EA7413';
             lines[0].style.strokeWidth = 3;
         }
@@ -227,9 +223,7 @@ function boxLeave() {
             boxes[a].style.border = "1px solid rgba(255,255,255,0)";
         }   
         for(let a = 0; a < arrows.length; a++) {
-            arrows[a].style.opacity = 1;
-            arrows[a].style.stroke = "rgba(255, 255, 255, 0.35)"; // Volta pro branco bonitinho
-            arrows[a].style.strokeWidth = 1.5;
+            arrows[a].style.opacity = 0; // Setas somem ao tirar o mouse
         }
     }
 }
