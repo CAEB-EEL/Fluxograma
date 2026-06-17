@@ -19,33 +19,33 @@ const curriculos = {
         "Biologia Celular": { "periodo": 1, "requisito": [] },
 
         // --- 2º Período ---
-        "Cálculo II": { "periodo": 2, "requisito": [] },
+        "Cálculo II": { "periodo": 2, "requisito": ["Cálculo I", "Geometria Analítica"] },
         "Física I": { "periodo": 2, "requisito": [] },
         "Física Experimental I": { "periodo": 2, "requisito": [] },
-        "Álgebra Linear": { "periodo": 2, "requisito": [] },
-        "Química Geral Experimental": { "periodo": 2, "requisito": [] },
-        "Fundamentos de Química para Engenharia II-A": { "periodo": 2, "requisito": [] },
-        "Microbiologia: da Teoria à Prática": { "periodo": 2, "requisito": [] },
+        "Álgebra Linear": { "periodo": 2, "requisito": ["Geometria Analítica"] },
+        "Química Geral Experimental": { "periodo": 2, "requisito": [ "Fundamentos de Química para Engenharia I-B"] },
+        "Fundamentos de Química para Engenharia II-A": { "periodo": 2, "requisito": [ "Fundamentos de Química para Engenharia I-B"] },
+        "Microbiologia: da Teoria à Prática": { "periodo": 2, "requisito": ["Biologia Celular"] },
 
         // --- 3º Período ---
-        "Fluidos, Ondas e Termodinâmica": { "periodo": 3, "requisito": [] },
-        "Mecânica": { "periodo": 3, "requisito": [] },
-        "Cálculo Vetorial": { "periodo": 3, "requisito": [] },
-        "Computação Aplicada à Engenharia": { "periodo": 3, "requisito": [] },
+        "Fluidos, Ondas e Termodinâmica": { "periodo": 3, "requisito": ["Cálculo I", ""Física I""] },
+        "Mecânica": { "periodo": 3, "requisito": ["Geometria Analítica", "Física I"] },
+        "Cálculo Vetorial": { "periodo": 3, "requisito": ["Cálculo II"] },
+        "Computação Aplicada à Engenharia": { "periodo": 3, "requisito": ["Cálculo II", "Geometria Analítica"] },
         "Balanços de Massa e Energia": { "periodo": 3, "requisito": [] },
-        "Química Bioinorgânica": { "periodo": 3, "requisito": [] },
-        "Química Orgânica Fundamental": { "periodo": 3, "requisito": [] },
-        "Engenharia Genética Teórica e Prática": { "periodo": 3, "requisito": [] },
+        "Química Bioinorgânica": { "periodo": 3, "requisito": ["Fundamentos de Química para Engenharia II-A"] },
+        "Química Orgânica Fundamental": { "periodo": 3, "requisito": ["Fundamentos de Química para Engenharia II-A"] },
+        "Engenharia Genética Teórica e Prática": { "periodo": 3, "requisito": ["Microbiologia: da Teoria à Prática"] },
 
         // --- 4º Período ---
-        "Equações Diferenciais": { "periodo": 4, "requisito": [] },
+        "Equações Diferenciais": { "periodo": 4, "requisito": ["Álgebra Linear", "Cálculo II"] },
         "Introdução ao Eletromagnetismo": { "periodo": 4, "requisito": [] },
         "Laboratório de Eletromagnetismo": { "periodo": 4, "requisito": [] },
         "Termodinâmica Química Aplicada I": { "periodo": 4, "requisito": [] },
         "Fenômenos de Transporte I": { "periodo": 4, "requisito": [] },
         "Bioquímica Experimental I": { "periodo": 4, "requisito": [] },
-        "Bioquímica I": { "periodo": 4, "requisito": [] },
-        "Estrutura e Química de Materiais Lignocelulósicos": { "periodo": 4, "requisito": [] },
+        "Bioquímica I": { "periodo": 4, "requisito": ["Química Orgânica Fundamental", "Biologia Celular"] },
+        "Estrutura e Química de Materiais Lignocelulósicos": { "periodo": 4, "requisito": ["Química Orgânica Fundamental"] },
         "Introdução à Ciência dos Materiais": { "periodo": 4, "requisito": [] },
 
         // --- 5º Período ---
