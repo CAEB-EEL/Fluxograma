@@ -130,3 +130,28 @@ line, .modbox {
 }
     box-shadow: 0 0 10px rgba(234, 116, 19, 0.5);
 }
+/* Força o container principal a ocupar a tela toda */
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Evita barra de rolagem horizontal chata */
+}
+
+/* Tente identificar qual a classe do seu container principal e adicione aqui. 
+   Estou usando os nomes mais comuns (.container, .grid, .periodos) */
+.container, #container, .grid, .periodos, .board {
+    width: 100vw !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-wrap: nowrap !important; /* Mantém os períodos lado a lado */
+    justify-content: space-evenly !important; /* Espalha os períodos pela tela inteira */
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Faz com que cada coluna de período cresça e ocupe o espaço vazio */
+.periodo {
+    flex: 1 1 0 !important;
+    min-width: 100px; /* Evita que a coluna fique fina demais */
+    margin: 0 5px;
+}
