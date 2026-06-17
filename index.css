@@ -113,5 +113,20 @@ line, .modbox {
 .tab-btn.active {
     background-color: #EA7413;
     color: #ffffff;
+    /* Ajustes para ocupar a tela toda e organizar os blocos */
+.container, .grid-container, .curriculo-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+    align-content: flex-start;
+}
+
+/* Opcional: Garante que cada bloco de disciplina tenha um tamanho mínimo */
+.disciplina {
+    flex: 0 1 calc(20% - 10px); /* Ajuste os 20% se quiser blocos maiores ou menores */
+    margin: 5px;
+    box-sizing: border-box;
+}
     box-shadow: 0 0 10px rgba(234, 116, 19, 0.5);
 }
