@@ -1,8 +1,4 @@
 const curriculos = {
-    "2022": {
-        // Espaço reservado para 2022
-    },
-    
     "2023": {
         // --- 1º Período ---
         "Cálculo I": { "periodo": 1, "requisito": [] },
@@ -90,6 +86,10 @@ const curriculos = {
         // --- 10º Período ---
         "Estágio Supervisionado": { "periodo": 10, "requisito": [] },
         "Projeto Final de Curso em Engenharia Bioquímica": { "periodo": 10, "requisito": [] }
+    },
+    
+    "2024": {
+        // Espaço reservado para 2025
     },
     
     "2025": {
