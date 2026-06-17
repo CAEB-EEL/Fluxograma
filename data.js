@@ -85,4 +85,13 @@ const curriculos = {
         "Instrumentação e Controle de Bioprocessos": { "periodo": 8, "requisito": [] },
         "Engenharia Bioquímica II": { "periodo": 8, "requisito": [] },
 
-        // ---
+        // --- 9º Período ---
+        "Solução de Problemas de Engenharia": { "periodo": 9, "requisito": [] },
+        "Modelagem e Simulação de Processos Biotecnológicos": { "periodo": 9, "requisito": [] },
+        "Reatores Bioquímicos": { "periodo": 9, "requisito": [] },
+
+        // --- 10º Período ---
+        "Estágio Supervisionado": { "periodo": 10, "requisito": [] },
+        "Projeto Final de Curso em Engenharia Bioquímica": { "periodo": 10, "requisito": [] }
+    }
+};
