@@ -100,7 +100,7 @@ const curriculos = {
 
             // 2º Período
             'Cálculo II': { periodo: 2, requisito: ['Cálculo I'] },
-            'Física I': { periodo: 2, requisito: ['Cálculo I'] },
+            'Física I': { periodo: 2, requisito: [] },
             'Física Experimental I': { periodo: 2, requisito: [] },
             'Álgebra Linear': { periodo: 2, requisito: ['Geometria Analítica'] },
             'Química Geral Experimental': { periodo: 2, requisito: [] },
@@ -188,7 +188,7 @@ const curriculos = {
 
             // 2º Período
             'Cálculo II': { periodo: 2, requisito: ['Cálculo I'] },
-            'Física I': { periodo: 2, requisito: ['Cálculo I'] },
+            'Física I': { periodo: 2, requisito: [] },
             'Física Experimental I': { periodo: 2, requisito: [] },
             'Álgebra Linear': { periodo: 2, requisito: ['Geometria Analítica'] },
             'Química Geral Experimental': { periodo: 2, requisito: [] },
