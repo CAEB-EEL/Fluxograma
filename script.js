@@ -100,6 +100,8 @@ function setup() {
 }
 
 function drawArrows() {
+    const svgContainer = document.getElementById("svgContainer");
+
     for(let [key, value] of Object.entries(currentData)) {
         let self = document.getElementById(key);
         if(!self) continue;
@@ -107,39 +109,39 @@ function drawArrows() {
         if(value["requisito"].length) {
             for(let req of value["requisito"]) {
                 let parent = document.getElementById(req);
-                
+
                 if(!parent) {
                     console.warn(`Seta ignorada: A matéria "${key}" pede "${req}", mas essa matéria não existe!`);
-                    continue; 
+                    continue;
                 }
-                
+
                 let clone = document.getElementById(req + key);
-                
+
                 if(!clone) {
-                    clone = document.createElementNS("http://www.w3.org/2000/svg", 'line');
-                    // SETAS INVISÍVEIS POR PADRÃO AQUI (opacity: 0)
+                    clone = document.createElementNS("http://www.w3.org/2000/svg", "line");
                     clone.setAttribute("style", "stroke: #EA7413; stroke-width: 2; opacity: 0; transition: opacity 0.2s ease-in-out;");
                     clone.setAttribute("marker-end", "url(#arrow)");
 
-                    clone.classList.add(req.replaceAll(' ', '_'));
-                    clone.classList.add(key.replaceAll(' ', '_'));
+                    clone.classList.add(req.replaceAll(" ", "_"));
+                    clone.classList.add(key.replaceAll(" ", "_"));
                     clone.setAttribute("id", req + key);
                 }
-                
+
                 let parentRect = parent.getBoundingClientRect();
                 let selfRect = self.getBoundingClientRect();
-                
-                let x1 = parentRect.left + (parentRect.width / 2) + window.scrollX;
-                let y1 = parentRect.bottom + window.scrollY;
-                let x2 = selfRect.left + (selfRect.width / 2) + window.scrollX;
-                let y2 = selfRect.top + window.scrollY;
-                
+                let svgRect = svgContainer.getBoundingClientRect();
+
+                let x1 = parentRect.left + (parentRect.width / 2) - svgRect.left;
+                let y1 = parentRect.bottom - svgRect.top;
+                let x2 = selfRect.left + (selfRect.width / 2) - svgRect.left;
+                let y2 = selfRect.top - svgRect.top;
+
                 clone.setAttribute("x1", x1 + "px");
                 clone.setAttribute("y1", y1 + "px");
                 clone.setAttribute("x2", x2 + "px");
                 clone.setAttribute("y2", y2 + "px");
 
-                document.getElementById("svgContainer").appendChild(clone);
+                svgContainer.appendChild(clone);
             }
         }
     }
