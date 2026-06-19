@@ -346,7 +346,7 @@ const curriculos = {
         "Reatores Bioquímicos": { "periodo": 9, "requisito": ["Engenharia Bioquímica I"] },
 
         // --- 10º Período ---
-        "Estágio Supervisionado": { "periodo": 10, "requisito": ["Química Geral Experimental", "Fundamentos de Química para Engenharia II-A", "Fundamentos de Química para Engenharia I-B", "Equações Diferenciais", "Laboratório de Eletricidade", "Introdução ao Eletromagnetismo", "Computação Aplicada à Engenharia", "Cálculo I", "Eletricidade Aplicada", "Estatística", "Mecânica", "Geometria Analítica", "Álgebra Linear", "Física Experimental I", "Laboratório de Eletromagnetismo", "Cálculo Vetorial", "Introdução à Ciência dos Materiais", "Cálculo II", "Leitura e Intepretação de Desenho Técnico", "Física I", "Fluidos, Ondas e Termodinâmica"] },
+        "Estágio Supervisionado": { "periodo": 10, "requisito": ["Química Geral Experimental", "Fundamentos de Química para Engenharia II-A", "Fundamentos de Química para Engenharia I-B", "Equações Diferenciais", "Laboratório de Eletricidade", "Introdução ao Eletromagnetismo", "Computação Aplicada à Engenharia", "Cálculo I", "Eletricidade Aplicada", "Estatística", "Mecânica", "Geometria Analítica", "Álgebra Linear", "Física Experimental I", "Laboratório de Eletromagnetismo", "Cálculo Vetorial", "Introdução à Ciência dos Materiais", "Cálculo II", "Leitura e Interpretação de Desenho Técnico", "Física I", "Fluidos, Ondas e Termodinâmica"] },
         "Projeto Final de Curso em Engenharia Bioquímica": { "periodo": 10, "requisito": ["Solução de Problemas de Engenharia", "Introdução ao Gerenciamento de Projetos Ambientais"] }
     }
 };
