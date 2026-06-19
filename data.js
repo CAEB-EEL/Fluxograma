@@ -283,9 +283,9 @@ const curriculos = {
         "Microbiologia: da Teoria à Prática": { "periodo": 2, "requisito": ["Biologia Celular"] },
 
         // --- 3º Período ---
-        "Fluidos, Ondas e Termodinâmica": { "periodo": 3, "requisito": ["Cálculo I", "Física I"] },
-        "Mecânica": { "periodo": 3, "requisito": ["Geometria Analítica", "Física I"] },
-        "Cálculo Vetorial": { "periodo": 3, "requisito": ["Cálculo II"] },
+        "Fluidos, Ondas e Termodinâmica": { "periodo": 3, "requisito": ["Cálculo II", "Física I"] },
+        "Mecânica": { "periodo": 3, "requisito": ["Geometria Analítica", "Física I", "Cálculo II"] },
+        "Cálculo Vetorial": { "periodo": 3, "requisito": ["Cálculo II", "Álgebra Linear"] },
         "Computação Aplicada à Engenharia": { "periodo": 3, "requisito": ["Geometria Analítica", "Cálculo II"] },
         "Balanços de Massa e Energia": { "periodo": 3, "requisito": [] },
         "Química Bioinorgânica": { "periodo": 3, "requisito": ["Fundamentos de Química para Engenharia II-A"] },
@@ -294,7 +294,7 @@ const curriculos = {
 
         // --- 4º Período ---
         "Equações Diferenciais": { "periodo": 4, "requisito": ["Álgebra Linear", "Cálculo II"] },
-        "Introdução ao Eletromagnetismo": { "periodo": 4, "requisito": ["Cálculo II", "Fluidos, Ondas e Termodinâmica"] },
+        "Introdução ao Eletromagnetismo": { "periodo": 4, "requisito": ["Cálculo II", "Física I", "Cálculo Vetorial"] },
         "Laboratório de Eletromagnetismo": { "periodo": 4, "requisito": ["Física Experimental I"] },
         "Termodinâmica Química Aplicada I": { "periodo": 4, "requisito": ["Balanços de Massa e Energia", "Cálculo II", "Fluidos, Ondas e Termodinâmica"] },
         "Fenômenos de Transporte I": { "periodo": 4, "requisito": ["Mecânica", "Cálculo Vetorial"] },
@@ -306,7 +306,7 @@ const curriculos = {
         // --- 5º Período ---
         "Estatística": { "periodo": 5, "requisito": ["Cálculo II"] },
         "Eletricidade Aplicada": { "periodo": 5, "requisito": ["Introdução ao Eletromagnetismo"] },
-        "Laboratório de Eletricidade": { "periodo": 5, "requisito": ["Laboratório de Eletromagnetismo"] },
+        "Laboratório de Eletricidade": { "periodo": 5, "requisito": ["Laboratório de Eletromagnetismo", "Introdução ao Eletromagnetismo"] },
         "Operações Unitárias I": { "periodo": 5, "requisito": ["Fenômenos de Transporte I"] },
         "Fenômenos de Transporte II": { "periodo": 5, "requisito": ["Fenômenos de Transporte I", "Equações Diferenciais", "Fluidos, Ondas e Termodinâmica"] },
         "Termodinâmica Química Aplicada II": { "periodo": 5, "requisito": ["Termodinâmica Química Aplicada I"] },
@@ -346,7 +346,7 @@ const curriculos = {
         "Reatores Bioquímicos": { "periodo": 9, "requisito": ["Engenharia Bioquímica I"] },
 
         // --- 10º Período ---
-        "Estágio Supervisionado": { "periodo": 10, "requisito": [] },
+        "Estágio Supervisionado": { "periodo": 10, "requisito": ["Química Geral Experimental", "Fundamentos de Química para Engenharia II-A", "Fundamentos de Química para Engenharia I-B", "Equações Diferenciais", "Laboratório de Eletricidade", "Introdução ao Eletromagnetismo", "Computação Aplicada à Engenharia", "Cálculo I", "Eletricidade Aplicada", "Estatística", "Mecânica", "Geometria Analítica", "Álgebra Linear", "Física Experimental I", "Laboratório de Eletromagnetismo", "Cálculo Vetorial", "Introdução à Ciência dos Materiais", "Cálculo II", "Leitura e Intepretação de Desenho Técnico", "Física I", "Fluidos, Ondas e Termodinâmica"] },
         "Projeto Final de Curso em Engenharia Bioquímica": { "periodo": 10, "requisito": ["Solução de Problemas de Engenharia", "Introdução ao Gerenciamento de Projetos Ambientais"] }
     }
 };
