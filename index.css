@@ -2,94 +2,25 @@
 
 html, body {
     width: 100%;
-    margin: 10px; /* adicionei o px aqui para o navegador reconhecer certinho, era 0 antes */
+    margin: 0;
     padding: 0;
 }
 
 body {
-    background-color: #303030; /*era #161616*/
+    background-color: #303030;
     font-family: Inter, Arial;
+    overflow-x: hidden;
 }
 
-div#main {
-    font-size: 1em;
-    position: absolute;
-}
-
-.rowContainer {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-#boxRows {
-    position: absolute;
-}
-
-#svgContainer {
-    position: absolute;
-}
-
-hr {
-    /* border: #8888ff 1px solid; */
-    border: #8888ff;
-}
-
-h2 {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding: 0 12px;
-    color: #EA7413;
-}
-
-.modbox {
-    position: relative;
-    border: 1px solid rgba(255,255,255,0);
-    text-align: center;
-    width: 12em; /*era 12, é a largura das caixas*/
-    height: 6em; /*era 7, é a altura das caixas*/
-    margin: 5px; /*era 5, é a distância lateral entre as caixas*/
-    padding: 5px; /*era 3, é a distância do texto dentro da caixa para a lateral da caixa*/
-    background-color: black;
-}
-
-line, .modbox {
-    transition: all 200ms ease;
-}
-
-.modTitle {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: #ffffff;
-    height: 5.5em; /*era 3, é a distância do texto dentro da caixa até o topo da caixa*/
-    /* width: 6em; */
-}
-
-.modTitle img {
-    max-width: 1.5em;
-    max-height: 1.5em;
-}
-
-.rewardSpan {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.modText, .bonusText {
-    color: #8888ff;
-    font-size: 0.7em; /*era 0.8*/
-    line-height: 1px;
-}
-
-/* --- ESTILOS DAS ABAS --- */
+/* --- ÁREA DAS ABAS --- */
 #tabs {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 15px;
     padding: 20px;
-    z-index: 10;
-    position: relative; /* Garante que fique clicável acima do SVG */
+    position: relative;
+    z-index: 20; /* fica acima das setas */
 }
 
 .tab-btn {
@@ -113,45 +44,90 @@ line, .modbox {
 .tab-btn.active {
     background-color: #EA7413;
     color: #ffffff;
-    /* Ajustes para ocupar a tela toda e organizar os blocos */
-.container, .grid-container, .curriculo-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    width: 100%;
-    align-content: flex-start;
-}
-
-/* Opcional: Garante que cada bloco de disciplina tenha um tamanho mínimo */
-.disciplina {
-    flex: 0 1 calc(20% - 10px); /* Ajuste os 20% se quiser blocos maiores ou menores */
-    margin: 5px;
-    box-sizing: border-box;
-}
     box-shadow: 0 0 10px rgba(234, 116, 19, 0.5);
 }
-/* Força o container principal a ocupar a tela toda */
-body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden; /* Evita barra de rolagem horizontal chata */
+
+/* --- ÁREA PRINCIPAL DO FLUXOGRAMA --- */
+div#main {
+    font-size: 1em;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
 }
 
-/* Tente identificar qual a classe do seu container principal e adicione aqui. 
-   Estou usando os nomes mais comuns (.container, .grid, .periodos) */
-.container, #container, .grid, .periodos, .board {
-    width: 100vw !important;
-    max-width: 100% !important;
-    display: flex !important;
-    flex-wrap: nowrap !important; /* Mantém os períodos lado a lado */
-    justify-content: space-evenly !important; /* Espalha os períodos pela tela inteira */
-    padding: 10px;
-    box-sizing: border-box;
+/* As disciplinas ficam numa camada abaixo das setas */
+#boxRows {
+    position: relative;
+    z-index: 2;
+    padding: 0 20px 40px 20px;
 }
 
-/* Faz com que cada coluna de período cresça e ocupe o espaço vazio */
-.periodo {
-    flex: 1 1 0 !important;
-    min-width: 100px; /* Evita que a coluna fique fina demais */
-    margin: 0 5px;
+/* O SVG das setas fica acima das caixas */
+#svgContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    z-index: 5;
+    pointer-events: none;
+}
+
+/* --- PERÍODOS --- */
+hr {
+    border: #8888ff;
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0 12px;
+    color: #EA7413;
+}
+
+.rowContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* --- CAIXAS DAS DISCIPLINAS --- */
+.modbox {
+    position: relative;
+    z-index: 2;
+    border: 1px solid rgba(255,255,255,0);
+    text-align: center;
+    width: 12em;
+    height: 6em;
+    margin: 5px;
+    padding: 5px;
+    background-color: black;
+}
+
+line, .modbox {
+    transition: all 200ms ease;
+}
+
+.modTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    height: 5.5em;
+}
+
+.modTitle img {
+    max-width: 1.5em;
+    max-height: 1.5em;
+}
+
+.rewardSpan {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.modText, .bonusText {
+    color: #8888ff;
+    font-size: 0.7em;
+    line-height: 1px;
 }
