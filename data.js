@@ -71,7 +71,7 @@ const curriculos = {
 
         // --- 8º Período ---
         "Laboratório de Engenharia Química III": { "periodo": 8, "requisito": ["Operações Unitárias I", "Operações Unitárias II"] },
-        "Operações Unitárias III": { "periodo": 8, "requisito": ["Operações Unitárias II"] },
+        "Operações Unitárias III": { "periodo": 8, "requisito": ["Fenômenos de Transporte III"] },
         "Modelagem e Simulação de Processos Biotecnológicos": { "periodo": 8, "requisito": ["Introdução aos Métodos Numéricos e Computacionais", "Operações Unitárias II"] },
         "Reatores Bioquímicos": { "periodo": 8, "requisito": ["Engenharia Bioquímica I"] },
         "Laboratório de Engenharia Bioquímica": { "periodo": 8, "requisito": ["Engenharia Bioquímica I", "Tecnologia de Proteínas"] },
@@ -79,12 +79,12 @@ const curriculos = {
         "Engenharia Bioquímica II": { "periodo": 8, "requisito": ["Engenharia Bioquímica I"] },
 
         // --- 9º Período ---
-        "Solução de Problemas de Engenharia": { "periodo": 9, "requisito": [] }, // DEIXEI VAZIO TEMPORARIAMENTE
+        "Solução de Problemas de Engenharia": { "periodo": 9, "requisito": ["Tecnologia de Biopolímeros", "Engenharia Bioquímica I", "Processos Bioquímicos Industriais", "Tecnologia de Proteínas", "Tecnologia de Conversão de Biomassa Vegetal", "Genética e Biotecnologia Vegetal"] }, // fortes
         "Empreendedorismo Tecnológico": { "periodo": 9, "requisito": ["Análise Técnico-Econômica de Bioprocessos"] },
         "Estatística em Bioprocessos": { "periodo": 9, "requisito": ["Estatística", "Processos Bioquímicos Industriais"] },
 
         // --- 10º Período ---
-        "Estágio Supervisionado": { "periodo": 10, "requisito": [] }, // DEIXEI VAZIO TEMPORARIAMENTE (Ciclo Básico)
+        "Estágio Supervisionado": { "periodo": 10, "requisito": ["Química Geral Experimental", "Fundamentos de Química para Engenharia II-A", "Fundamentos de Química para Engenharia I-B", "Cálculo IV", "Laboratório de Eletricidade", "Física III", "Introdução aos Métodos Numéricos e Computacionais", "Cálculo I", "Eletricidade Aplicada", "Estatística", "Mecânica", "Geometria Analítica", "Álgebra Linear", "Física Experimental I", "Física Experimental III", "Cálculo III", "Introdução à Ciência dos Materiais", "Cálculo II", "Leitura e Interpretação de Desenho Técnico", "Física I", "Física II"] }, // fortes
         "Projeto Final de Curso em Engenharia Bioquímica": { "periodo": 10, "requisito": ["Introdução ao Gerenciamento de Projetos Ambientais", "Solução de Problemas de Engenharia"] }
     },
     
