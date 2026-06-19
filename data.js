@@ -259,7 +259,7 @@ const curriculos = {
             'Reatores Bioquímicos': { periodo: 9, requisito: ['Engenharia Bioquímica I'] },
 
             // 10º Período
-            'Estágio Supervisionado': { periodo: 10, requisito: ["Química Geral Experimental", "Fundamentos de Química para Engenharia II-A", "Fundamentos de Química para Engenharia I-B", "Cálculo IV", "Laboratório de Eletricidade", "Física III", "Introdução aos Métodos Numéricos e Computacionais", "Cálculo I", "Eletricidade Aplicada", "Estatística", "Mecânica", "Geometria Analítica", "Álgebra Linear", "Física Experimental I", "Física Experimental III", "Cálculo III", "Introdução à Ciência dos Materiais", "Cálculo II", "Leitura e Interpretação de Desenho Técnico", "Física I", "Física II] },
+            'Estágio Supervisionado': { periodo: 10, requisito: ["Química Geral Experimental", "Fundamentos de Química para Engenharia II-A", "Fundamentos de Química para Engenharia I-B", "Cálculo IV", "Laboratório de Eletricidade", "Física III", "Introdução aos Métodos Numéricos e Computacionais", "Cálculo I", "Eletricidade Aplicada", "Estatística", "Mecânica", "Geometria Analítica", "Álgebra Linear", "Física Experimental I", "Física Experimental III", "Cálculo III", "Introdução à Ciência dos Materiais", "Cálculo II", "Leitura e Interpretação de Desenho Técnico", "Física I", "Física II"] },
             'Projeto Final de Curso em Engenharia Bioquímica': { periodo: 10, requisito: ["Solução de Problemas de Engenharia", "Introdução ao Gerenciamento de Projetos Ambientais"] }
         },
 
