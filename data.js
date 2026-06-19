@@ -99,14 +99,14 @@ const curriculos = {
             'Biologia Celular': { periodo: 1, requisito: [] },
 
             // 2º Período
-            'Cálculo II': { periodo: 2, requisito: ['Cálculo I'] },
+            'Cálculo II': { periodo: 2, requisito: ['Cálculo I', "Geometria Analítica"] },
             'Física I': { periodo: 2, requisito: [] },
             'Física Experimental I': { periodo: 2, requisito: [] },
             'Álgebra Linear': { periodo: 2, requisito: ['Geometria Analítica'] },
-            'Química Geral Experimental': { periodo: 2, requisito: [] },
+            'Química Geral Experimental': { periodo: 2, requisito: ["Fundamentos de Química para Engenharia I-B"] },
             'Fundamentos de Química para Engenharia II-A': { periodo: 2, requisito: ['Fundamentos de Química para Engenharia I-B'] },
             'Engenharia Genética': { periodo: 2, requisito: ['Biologia Celular'] },
-            'Microbiologia Experimental': { periodo: 2, requisito: [] },
+            'Microbiologia Experimental': { periodo: 2, requisito: ["Microbiologia"] },
             'Microbiologia': { periodo: 2, requisito: ['Biologia Celular'] },
 
             // 3º Período
