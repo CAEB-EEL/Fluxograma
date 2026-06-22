@@ -226,7 +226,7 @@ const curriculos = {
 
             // 6º Período
             'Eletricidade Aplicada': { periodo: 6, requisito: ['Física III'] },
-            'Laboratório de Eletricidade': { periodo: 6, requisito: ['Física Experimental III'] },
+            'Laboratório de Eletricidade': { periodo: 6, requisito: ["Física III", 'Física Experimental III'] },
             'Operações Unitárias II': { periodo: 6, requisito: ['Fenômenos de Transporte II'] },
             'Fenômenos de Transporte III': { periodo: 6, requisito: ['Fenômenos de Transporte II'] },
             'Engenharia de Segurança do Trabalho e Biossegurança': { periodo: 6, requisito: [] },
