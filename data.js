@@ -215,7 +215,6 @@ const curriculos = {
             'Estrutura e Química de Materiais Lignocelulósicos': { periodo: 4, requisito: ['Química Orgânica Fundamental'] },
 
             // 5º Período
-            'Estatística': { periodo: 5, requisito: ['Cálculo II'] },
             'Operações Unitárias I': { periodo: 5, requisito: ['Fenômenos de Transporte I'] },
             'Fenômenos de Transporte II': { periodo: 5, requisito: ['Fenômenos de Transporte I', "Cálculo IV", "Física II"] },
             'Termodinâmica Química Aplicada II': { periodo: 5, requisito: ['Termodinâmica Química Aplicada I'] },
@@ -223,20 +222,20 @@ const curriculos = {
             'Bioquímica Experimental II': { periodo: 5, requisito: ['Bioquímica II'] },
             'Bioquímica II': { periodo: 5, requisito: ['Bioquímica I'] },
             'Introdução à Ciência dos Materiais': { periodo: 5, requisito: [] },
+            'Tecnologia de Biopolímeros': { periodo: 6, requisito: ['Química Orgânica Fundamental'] },
+            'Engenharia de Segurança do Trabalho e Biossegurança': { periodo: 6, requisito: [] },
 
             // 6º Período
+            'Estatística': { periodo: 5, requisito: ['Cálculo II'] },
             'Eletricidade Aplicada': { periodo: 6, requisito: ['Física III'] },
             'Laboratório de Eletricidade': { periodo: 6, requisito: ["Física III", 'Física Experimental III'] },
             'Operações Unitárias II': { periodo: 6, requisito: ['Fenômenos de Transporte II'] },
             'Fenômenos de Transporte III': { periodo: 6, requisito: ['Fenômenos de Transporte II'] },
-            'Engenharia de Segurança do Trabalho e Biossegurança': { periodo: 6, requisito: [] },
             'Engenharia Genética Teórica e Prática': { periodo: 6, requisito: ['Biologia Celular', "Microbiologia: da Teoria à Prática"] },
             'Tecnologia de Processos Fermentativos': { periodo: 6, requisito: ['Microbiologia: da Teoria à Prática', 'Bioquímica II'] },
             'Análise Técnico-Econômica de Bioprocessos': { periodo: 6, requisito: ["Balanços de Massa e Energia"] },
-            'Tecnologia de Biopolímeros': { periodo: 6, requisito: ['Química Orgânica Fundamental'] },
-
+            
             // 7º Período
-            'Introdução ao Gerenciamento de Projetos Ambientais': { periodo: 7, requisito: [] },
             'Operações Unitárias III': { periodo: 7, requisito: ['Fenômenos de Transporte III'] },
             'Engenharia Bioquímica I': { periodo: 7, requisito: ['Tecnologia de Processos Fermentativos'] },
             'Tecnologia de Proteínas': { periodo: 7, requisito: ['Bioquímica I', "Engenharia Genética Teórica e Prática", "Microbiologia: da Teoria à Prática"] },
@@ -246,14 +245,15 @@ const curriculos = {
             'Química Analítica Aplicada a Bioprocessos': { periodo: 7, requisito: ['Química Geral Experimental', "Fundamentos de Química para Engenharia II-A", "Bioquímica Experimental I"] },
 
             // 8º Período
+            'Introdução ao Gerenciamento de Projetos Ambientais': { periodo: 7, requisito: [] },
             'Laboratório de Engenharia Química III': { periodo: 8, requisito: ['Operações Unitárias II', "Operações Unitárias I"] },
             'Engenharia Bioquímica II': { periodo: 8, requisito: ['Engenharia Bioquímica I'] },
-            'Estatística em Bioprocessos': { periodo: 8, requisito: ['Estatística', "Processos Bioquímicos Industriais"] },
             'Laboratório de Engenharia Bioquímica': { periodo: 8, requisito: ['Engenharia Bioquímica I', 'Tecnologia de Proteínas'] },
             'Tratamento Biológico de Efluentes': { periodo: 8, requisito: ['Microbiologia: da Teoria à Prática'] },
             'Instrumentação e Controle de Bioprocessos': { periodo: 8, requisito: ['Eletricidade Aplicada', "Fenômenos de Transporte II"] },
 
             // 9º Período
+            'Estatística em Bioprocessos': { periodo: 8, requisito: ['Estatística', "Processos Bioquímicos Industriais"] },
             'Solução de Problemas de Engenharia': { periodo: 9, requisito: ["Tecnologia de Biopolímeros", "Engenharia Bioquímica I", "Processos Bioquímicos Industriais", "Tecnologia de Proteínas", "Tecnologia de Conversão de Biomassa Vegetal", "Genética e Biotecnologia Vegetal"] },
             'Modelagem e Simulação de Processos Biotecnológicos': { periodo: 9, requisito: ['Introdução aos Métodos Numéricos e Computacionais', 'Operações Unitárias II'] },
             'Reatores Bioquímicos': { periodo: 9, requisito: ['Engenharia Bioquímica I'] },
