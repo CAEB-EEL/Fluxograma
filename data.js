@@ -84,7 +84,7 @@ const curriculos = {
 
         // --- 10º Período ---
         "Estágio Supervisionado": { "periodo": 10, "requisito": ["Química Geral Experimental", "Fundamentos de Química para Engenharia II-A", "Fundamentos de Química para Engenharia I-B", "Cálculo IV", "Laboratório de Eletricidade", "Física III", "Introdução aos Métodos Numéricos e Computacionais", "Cálculo I", "Eletricidade Aplicada", "Estatística", "Mecânica", "Geometria Analítica", "Álgebra Linear", "Física Experimental I", "Física Experimental III", "Cálculo III", "Introdução à Ciência dos Materiais", "Cálculo II", "Leitura e Interpretação de Desenho Técnico", "Física I", "Física II"] }, // fortes
-        "Empreendedorismo Tecnológico": { "periodo": 9, "requisito": ["Análise Técnico-Econômica de Bioprocessos"] },
+        "Empreendedorismo Tecnológico": { "periodo": 10, "requisito": ["Análise Técnico-Econômica de Bioprocessos"] },
         "Projeto Final de Curso em Engenharia Bioquímica": { "periodo": 10, "requisito": ["Introdução ao Gerenciamento de Projetos Ambientais", "Solução de Problemas de Engenharia"] }
     },
     
