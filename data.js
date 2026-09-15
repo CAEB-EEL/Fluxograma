@@ -222,11 +222,11 @@ const curriculos = {
             'Bioquímica Experimental II': { periodo: 5, requisito: ['Bioquímica II'] },
             'Bioquímica II': { periodo: 5, requisito: ['Bioquímica I'] },
             'Introdução à Ciência dos Materiais': { periodo: 5, requisito: [] },
-            'Tecnologia de Biopolímeros': { periodo: 6, requisito: ['Química Orgânica Fundamental'] },
-            'Engenharia de Segurança do Trabalho e Biossegurança': { periodo: 6, requisito: [] },
+            'Tecnologia de Biopolímeros': { periodo: 5, requisito: ['Química Orgânica Fundamental'] },
+            'Engenharia de Segurança do Trabalho e Biossegurança': { periodo: 5, requisito: [] },
 
             // 6º Período
-            'Estatística': { periodo: 5, requisito: ['Cálculo II'] },
+            'Estatística': { periodo: 6, requisito: ['Cálculo II'] },
             'Eletricidade Aplicada': { periodo: 6, requisito: ['Física III'] },
             'Laboratório de Eletricidade': { periodo: 6, requisito: ["Física III", 'Física Experimental III'] },
             'Operações Unitárias II': { periodo: 6, requisito: ['Fenômenos de Transporte II'] },
@@ -245,7 +245,7 @@ const curriculos = {
             'Química Analítica Aplicada a Bioprocessos': { periodo: 7, requisito: ['Química Geral Experimental', "Fundamentos de Química para Engenharia II-A", "Bioquímica Experimental I"] },
 
             // 8º Período
-            'Introdução ao Gerenciamento de Projetos Ambientais': { periodo: 7, requisito: [] },
+            'Introdução ao Gerenciamento de Projetos Ambientais': { periodo: 8, requisito: [] },
             'Laboratório de Engenharia Química III': { periodo: 8, requisito: ['Operações Unitárias II', "Operações Unitárias I"] },
             'Engenharia Bioquímica II': { periodo: 8, requisito: ['Engenharia Bioquímica I'] },
             'Laboratório de Engenharia Bioquímica': { periodo: 8, requisito: ['Engenharia Bioquímica I', 'Tecnologia de Proteínas'] },
@@ -253,7 +253,7 @@ const curriculos = {
             'Instrumentação e Controle de Bioprocessos': { periodo: 8, requisito: ['Eletricidade Aplicada', "Fenômenos de Transporte II"] },
 
             // 9º Período
-            'Estatística em Bioprocessos': { periodo: 8, requisito: ['Estatística', "Processos Bioquímicos Industriais"] },
+            'Estatística em Bioprocessos': { periodo: 9, requisito: ['Estatística', "Processos Bioquímicos Industriais"] },
             'Solução de Problemas de Engenharia': { periodo: 9, requisito: ["Tecnologia de Biopolímeros", "Engenharia Bioquímica I", "Processos Bioquímicos Industriais", "Tecnologia de Proteínas", "Tecnologia de Conversão de Biomassa Vegetal", "Genética e Biotecnologia Vegetal"] },
             'Modelagem e Simulação de Processos Biotecnológicos': { periodo: 9, requisito: ['Introdução aos Métodos Numéricos e Computacionais', 'Operações Unitárias II'] },
             'Reatores Bioquímicos': { periodo: 9, requisito: ['Engenharia Bioquímica I'] },
