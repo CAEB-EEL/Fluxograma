@@ -150,29 +150,29 @@ const curriculos = {
             'Tecnologia de Biopolímeros': { periodo: 6, requisito: ['Química Orgânica Fundamental'] },
 
             // 7º Período
-            'Introdução ao Gerenciamento de Projetos Ambientais': { periodo: 7, requisito: [] },
             'Operações Unitárias III': { periodo: 7, requisito: ['Fenômenos de Transporte III'] },
             'Engenharia Bioquímica I': { periodo: 7, requisito: ['Tecnologia de Processos Fermentativos'] },
             'Tecnologia de Proteínas': { periodo: 7, requisito: ['Bioquímica I', "Microbiologia", "Engenharia Genética"] },
             'Tratamento Biológico de Efluentes': { periodo: 7, requisito: ['Microbiologia'] },
             'Genética e Biotecnologia Vegetal': { periodo: 7, requisito: ['Engenharia Genética', "Microbiologia", "Bioquímica II"] },
-            'Empreendedorismo Tecnológico': { periodo: 7, requisito: ["Análise Técnico-Econômica de Bioprocessos"] },
             'Processos Bioquímicos Industriais': { periodo: 7, requisito: ['Tecnologia de Processos Fermentativos', "Operações Unitárias II"] },
 
             // 8º Período
+            'Introdução ao Gerenciamento de Projetos Ambientais': { periodo: 8, requisito: [] },
             'Laboratório de Engenharia Química III': { periodo: 8, requisito: ['Operações Unitárias II', "Operações Unitárias I"] },
             'Engenharia Bioquímica II': { periodo: 8, requisito: ['Engenharia Bioquímica I'] },
-            'Estatística em Bioprocessos': { periodo: 8, requisito: ['Estatística', "Processos Bioquímicos Industriais"] },
             'Laboratório de Engenharia Bioquímica': { periodo: 8, requisito: ['Engenharia Bioquímica I', 'Tecnologia de Proteínas'] },
             'Instrumentação e Controle de Bioprocessos': { periodo: 8, requisito: ['Fenômenos de Transporte II', "Eletricidade Aplicada"] },
-            'Solução de Problemas de Engenharia': { periodo: 8, requisito: ["Tecnologia de Biopolímeros", "Engenharia Bioquímica I", "Processos Bioquímicos Industriais", "Tecnologia de Proteínas", "Tecnologia de Conversão de Biomassa Vegetal", "Genética e Biotecnologia Vegetal"] },
-
+            'Empreendedorismo Tecnológico': { periodo: 8, requisito: ["Análise Técnico-Econômica de Bioprocessos"] },
+            
             // 9º Período
-            'Projeto Final de Curso em Engenharia Bioquímica': { periodo: 9, requisito: ["Solução de Problemas de Engenharia", "Introdução ao Gerenciamento de Projetos Ambientais"] },
             'Modelagem e Simulação de Processos Biotecnológicos': { periodo: 9, requisito: ['Introdução aos Métodos Numéricos e Computacionais', 'Operações Unitárias II'] },
             'Reatores Bioquímicos': { periodo: 9, requisito: ['Engenharia Bioquímica I'] },
+            'Solução de Problemas de Engenharia': { periodo: 9, requisito: ["Tecnologia de Biopolímeros", "Engenharia Bioquímica I", "Processos Bioquímicos Industriais", "Tecnologia de Proteínas", "Tecnologia de Conversão de Biomassa Vegetal", "Genética e Biotecnologia Vegetal"] },
 
             // 10º Período
+            'Projeto Final de Curso em Engenharia Bioquímica': { periodo: 10, requisito: ["Solução de Problemas de Engenharia", "Introdução ao Gerenciamento de Projetos Ambientais"] },
+            'Estatística em Bioprocessos': { periodo: 10, requisito: ['Estatística', "Processos Bioquímicos Industriais"] },
             'Estágio Supervisionado': { periodo: 10, requisito: ["Química Geral Experimental", "Fundamentos de Química para Engenharia II-A", "Fundamentos de Química para Engenharia I-B", "Cálculo IV", "Laboratório de Eletricidade", "Física III", "Introdução aos Métodos Numéricos e Computacionais", "Cálculo I", "Eletricidade Aplicada", "Estatística", "Mecânica", "Geometria Analítica", "Álgebra Linear", "Física Experimental I", "Física Experimental III", "Cálculo III", "Introdução à Ciência dos Materiais", "Cálculo II", "Leitura e Interpretação de Desenho Técnico", "Física I", "Física II"]}
         },
     
